@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    font-family: "Jost", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.category_link {
+    color: #e1e1e1;
+    position: relative;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+.category_link:focus,
+.category_link:hover {
+    color: #fff;
+}
+
+.category_link:focus:after,
+.category_link:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+.category_link:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+.category_container:hover .category_image {
+    /* transform: scale(1.5); */
+    transform: scale(1.2);
+}
+
+.product-pic {
+    /* background-image: url('../../public/pics/perfume_1.jpg'); */
+    background-image: url('../../public/pics/perfume_2.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.group:hover .product-pic {
+    background-image: url('../../public/pics/perfume_1.jpg');
+}
