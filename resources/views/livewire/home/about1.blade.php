@@ -1,12 +1,12 @@
 <section class="w-[95vw] mx-auto my-0 max-h-screen px-20 text-black">
-    <div class="flex flex-col lg:flex-row h-full justify-between px10">
+    <div class="flex flex-col lg:flex-row h-full px10">
         {{-- ===== Picture Section ===== --}}
-        <div class="w-1/2 max-h-[500px]">
-            <img class="h-full my-32" src="{{asset('pics/about_1.jpeg')}}" alt="">
+        <div class="lg:w-1/2 max-w-full flex justify-center items-center my-0">
+            <video class="h-[85%] w-[80%]" src="{{asset('pics/about-1.mp4')}}" autoplay></video>
         </div>
 
         {{-- ===== Content Section ===== --}}
-        <div class="w-1/2 flex flex-col justify-center items-center mx-auto px-7">
+        <div class="lg:w-1/2 w-full flex flex-col justify-center items-center mx-auto px-7">
             <p style="font-weight: 600; letter-spacing: 3px"
                 class="text-left text-[#ff7be5]">
                 Discover Our Story
