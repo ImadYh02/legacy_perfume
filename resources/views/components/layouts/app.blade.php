@@ -28,10 +28,11 @@
         @livewire('partials.navbar')
         <main>
             @livewire('home.index')
+            @livewire('home.promises')
             @livewire('home.category')
             @livewire('home.featured_products')
             @livewire('home.quality')
-            @livewire('home.about1')
+            {{-- @livewire('home.about1') --}}
         </main>
         {{-- @livewire('partials.footer') --}}
         
