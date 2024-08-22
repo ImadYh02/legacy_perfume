@@ -32,6 +32,7 @@
             @livewire('home.category')
             @livewire('home.featured_products')
             @livewire('home.quality')
+            @livewire('home.about')
             {{-- @livewire('home.about1') --}}
         </main>
         {{-- @livewire('partials.footer') --}}
