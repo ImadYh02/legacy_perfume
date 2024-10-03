@@ -30,10 +30,12 @@
             @livewire('home.index')
             @livewire('home.promises')
             @livewire('home.category')
-            @livewire('home.featured_products')
+            @livewire('home.products')
             @livewire('home.quality')
-            @livewire('home.about')
-            {{-- @livewire('home.about1') --}}
+            {{-- @livewire('home.about')
+            @livewire('home.fproducts')
+            @livewire('home.awaiting') --}}
+            {{-- @livewire('home.testimonials') --}}
         </main>
         {{-- @livewire('partials.footer') --}}
         
