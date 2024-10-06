@@ -32,10 +32,7 @@
             @livewire('home.category')
             @livewire('home.products')
             @livewire('home.quality')
-            {{-- @livewire('home.about')
-            @livewire('home.fproducts')
-            @livewire('home.awaiting') --}}
-            {{-- @livewire('home.testimonials') --}}
+            @livewire('home.testimonials')
         </main>
         {{-- @livewire('partials.footer') --}}
         

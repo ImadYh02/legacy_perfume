@@ -14,10 +14,10 @@
 
             {{-- ===== Card Item ===== --}}
             <div class="lg:h-full w-1/2 lg:w-1/4 rounded-3xl border-[gray] bg-white border-1 border-[1px] shadow-xl flex flex-col">
-                <div class="relative max-h-[73%]">
+                <div class="product_pic relative max-h-[73%]">
                     <img 
                         style="border-radius: 24px 24px 0 0"
-                        class="h-full w-full"
+                        class="product_pic h-full w-full"
                         src="{{ asset('pics/perfume_1.jpg') }}"
                         alt=""
                     >

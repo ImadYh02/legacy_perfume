@@ -58,3 +58,20 @@
 .group:hover .product-pic {
     background-image: url('../../public/pics/perfume_1.jpg');
 }
+
+/* Hide Price ans Display Product's Card */
+@media (min-width: 1024px) {
+    .product_name {
+        transition: 0.3s ease;
+    }
+
+    .card_product:hover .product_price {
+        display: none;
+        transition: 0.3s ease;
+    }
+    
+    .card_product:hover .product_shop {
+        display: flex;
+        transition: 0.3s ease;
+    }
+}

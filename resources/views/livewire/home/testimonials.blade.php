@@ -1,178 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100vh;
+        }
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
 <body>
-  <!-- Swiper -->
-    <section class="w-[95vw] mx-auto lg:mt-12 lg:mb-8 min:h-[80vh] lg:mx-8 flex-col justify-center items-center text-black">
-        <div class="swiper mySwiper h-[290vh] lg:max-h-[170vh] lg:mt-14 mt-7 flex">
-            {{-- ===== Best Seller ===== --}}
-            <div class="swiper-wrapper w-1/4 flex flex-col lg:flex-row justify-center items-center gap-6">
-
-                {{-- ===== Card Item ===== --}}
-                <div class="swiper-slide min:h-1/2 w-screen lg:w-1/4 rounded-3xl border-[gray] bg-white border-1 border-[1px] shadow-xl flex flex-col">
-                    <div class="relative max-h-[73%]">
-                        <img 
-                            style="border-radius: 24px 24px 0 0"
-                            class="max-h-full w-full"
-                            src="{{ asset('pics/perfume_1.jpg') }}"
-                            alt=""
-                        >
-                        <div class="absolute w-full top-4 px-3 z-30 flex justify-between items-center">
-                            <div class="px-3 py-2 bg-[#FF69B4] rounded-xl">Best Seller</div>
-                            <a href="#" class="rounded-full inline-block ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="px-6 my-auto max-h-[27%]">
-                        <h2 class="font-bold"> Gucci CC Marmont 200 ml</h2>
-                        <div class="flex justify-between items-center mt-3">
-                            <div>
-                                <h3 class="text-[grey]">Price:</h3>
-                                <p class="font-bold">$200 <span class="font-normal ml-3 line-through">$420</span> </p>
-                            </div>
-                            <a href="" class="bg-[#FF69B4] p-3 rounded-xl inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- ===== Card Item ===== --}}
-                <div class="swiper-slide min:h-full w-full lg:w-1/4 rounded-3xl border-[gray] bg-white border-1 border-[1px] shadow-xl flex flex-col">
-                    <div class="relative max-h-[73%]">
-                        <img 
-                            style="border-radius: 24px 24px 0 0"
-                            class="max-h-full w-full"
-                            src="{{ asset('pics/perfume_2.jpeg') }}"
-                            alt=""
-                        >
-                        <div class="absolute w-full top-4 px-3 z-30 flex justify-between items-center">
-                            <div class="px-3 py-2 bg-[#FF69B4] rounded-xl">Best Seller</div>
-                            <a href="#" class="rounded-full inline-block ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="px-6 my-auto max-h-[27%]">
-                        <h2 class="font-bold"> Gucci CC Marmont 200 ml</h2>
-                        <div class="flex justify-between items-center mt-3">
-                            <div>
-                                <h3 class="text-[grey]">Price:</h3>
-                                <p class="font-bold">$200 <span class="font-normal ml-3 line-through">$420</span> </p>
-                            </div>
-                            <a href="" class="bg-[#FF69B4] p-3 rounded-xl inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- ===== Card Item ===== --}}
-                <div class="swiper-slide min:h-full w-full lg:w-1/4 rounded-3xl border-[gray] bg-white border-1 border-[1px] shadow-xl flex flex-col">
-                    <div class="relative max-h-[73%]">
-                        <img 
-                            style="border-radius: 24px 24px 0 0"
-                            class="h-full w-full"
-                            src="{{ asset('pics/perfume_3.jpeg') }}"
-                            alt=""
-                        >
-                        <div class="absolute w-full top-4 px-3 z-30 flex justify-between items-center">
-                            <div class="px-3 py-2 bg-[#FF69B4] rounded-xl">Best Seller</div>
-                            <a href="#" class="rounded-full inline-block ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="px-6 my-auto max-h-[27%]">
-                        <h2 class="font-bold"> Gucci CC Marmont 200 ml</h2>
-                        <div class="flex justify-between items-center mt-3">
-                            <div>
-                                <h3 class="text-[grey]">Price:</h3>
-                                <p class="font-bold">$200 <span class="font-normal ml-3 line-through">$420</span> </p>
-                            </div>
-                            <a href="" class="bg-[#FF69B4] p-3 rounded-xl inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- ===== Card Item ===== --}}
-                <div class="swiper-slide min:h-full w-full lg:w-1/4 rounded-3xl border-[gray] bg-white border-1 border-[1px] shadow-xl flex flex-col">
-                    <div class="relative max-h-[73%]">
-                        <img 
-                            style="border-radius: 24px 24px 0 0"
-                            class="h-full w-full"
-                            src="{{ asset('pics/perfume_1.jpg') }}"
-                            alt=""
-                        >
-                        <div class="absolute w-full top-4 px-3 z-30 flex justify-between items-center">
-                            <div class="px-3 py-2 bg-[#FF69B4] rounded-xl">Best Seller</div>
-                            <a href="#" class="rounded-full inline-block ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="px-6 my-auto max-h-[27%]">
-                        <h2 class="font-bold"> Gucci CC Marmont 200 ml</h2>
-                        <div class="flex justify-between items-center mt-3">
-                            <div>
-                                <h3 class="text-[grey]">Price:</h3>
-                                <p class="font-bold">$200 <span class="font-normal ml-3 line-through">$420</span> </p>
-                            </div>
-                            <a href="" class="bg-[#FF69B4] p-3 rounded-xl inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="lg:w-[95vw] w-screen mx-auto lg:mt-0 mt-0 min:h-screen lg:mx-8 flex-col justify-center items-center text-black">
+        {{-- ===== Heading ===== --}}
+        <div class="flex-col justify-center items-center">
+            <h2 class="text-2xl lg:text-3xl font-bold text-center text-[black] my-2 lg:mb-4">The Wall of L❤️VE</h2>
+            <div class="h-1 w-40 bg-[#ff7be5] mx-auto"></div>
         </div>
-        <div class="swiper-pagination"></div>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper mt-10">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img class="w-full" src="{{asset('pics/Feedback_1.png')}}" alt=""></div>
+                <div class="swiper-slide"><img class="w-full" src="{{asset('pics/Feedback_2.png')}}" alt=""></div>
+                <div class="swiper-slide"><img class="w-full" src="{{asset('pics/Feedback_3.png')}}" alt=""></div>
+                <div class="swiper-slide"><img class="w-full" src="{{asset('pics/Feedback_4.png')}}" alt=""></div>
+                <div class="swiper-slide"><img class="w-full" src="{{asset('pics/Feedback_1.png')}}" alt=""></div>
+                <div class="swiper-slide"><img class="w-full" src="{{asset('pics/Feedback_2.png')}}" alt=""></div>
+                <div class="swiper-slide"><img class="w-full" src="{{asset('pics/Feedback_3.png')}}" alt=""></div>
+                <div class="swiper-slide"><img class="w-full" src="{{asset('pics/Feedback_4.png')}}" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
     </section>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            centeredSlides: false,
+            grabCursor: true,
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                "@0.00": {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                "@0.75": {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                "@1.00": {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                "@1.50": {
+                    slidesPerView: 4,
+                    spaceBetween: 50,
+                },
+            },
+        });
+    </script>
 </body>
-
 </html>

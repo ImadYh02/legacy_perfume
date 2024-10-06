@@ -1,4 +1,4 @@
-<section class="w-[95vw] mx-auto my-0 h-1/2 lg:px-20 text-black">
+<section class="w-[95vw] mx-auto lg:my-0 my-8 h-1/2 lg:px-20 text-black">
     <div class="flex gap-5 justify-center lg:flex-row px-7 lg:justify-between">
         <div class="flex flex-col justify-center items-center">
             <img class="h-1/2" src="{{asset('pics/quality_1.png')}}" alt="">
