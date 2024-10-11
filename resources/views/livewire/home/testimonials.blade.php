@@ -39,7 +39,7 @@
     </style>
 </head>
 <body>
-    <section class="lg:w-[95vw] w-screen mx-auto lg:mt-0 mt-0 min:h-screen lg:mx-8 flex-col justify-center items-center text-black">
+    <section class="lg:w-[95vw] w-screen mx-auto lg:mt-0 mt-8for min:h-screen lg:mx-8 flex-col justify-center items-center text-black">
         {{-- ===== Heading ===== --}}
         <div class="flex-col justify-center items-center">
             <h2 class="text-2xl lg:text-3xl font-bold text-center text-[black] my-2 lg:mb-4">The Wall of L❤️VE</h2>

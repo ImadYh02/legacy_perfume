@@ -32,9 +32,11 @@
             @livewire('home.category')
             @livewire('home.products')
             @livewire('home.quality')
+            @livewire('home.awaiting')
             @livewire('home.testimonials')
+            @livewire('home.instagram')
         </main>
-        {{-- @livewire('partials.footer') --}}
+        @livewire('partials.footer')
         
         @livewireScripts
     </body>
