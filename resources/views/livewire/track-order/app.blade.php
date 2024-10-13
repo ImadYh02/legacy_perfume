@@ -48,6 +48,7 @@
             </div>
         </main>
 
+        @livewire('partials.maps')
         @livewire('partials.footer')
         
         @livewireScripts

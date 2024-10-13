@@ -36,7 +36,7 @@
                 </nav>
             </div>
               
-            <div class="mt-3">
+            <div class="my-3">
                 <div id="tabs-with-underline-1" role="tabpanel" aria-labelledby="tabs-with-underline-item-1" class="mt-10 mx-4 lg:mx-0 flex flex-row lg:gap-0 gap-4 flex-wrap">
                     @for ($j = 0; $j < 8; $j++)
                         <div class="card_product w-[47%] lg:w-1/4">
@@ -83,6 +83,7 @@
             </div>
         </main>
 
+        @livewire('partials.maps')
         @livewire('partials.footer')
         
         @livewireScripts
