@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: url('../../public/pics/main_bg.jpeg');
+}
+
 .category_link {
     color: #e1e1e1;
     position: relative;
@@ -85,5 +89,27 @@
 
 .footer {
     background: url('../../public/pics/about-bg.jpeg') center no-repeat;
+    background-size: cover;
+}
+
+/* Shop Banner */
+.shop_banner {
+    background: url('../../public/pics/product-banner1.jpg');
+}
+
+/* Track Order Banner */
+.torder_banner {
+    background: url('../../public/pics/product-banner.jpg');
+}
+
+/* Contact Banner */
+.contact_banner {
+    background: url('../../public/pics/contact-banner.jpg');
+}
+
+/* Common Banner Style */
+.banner {
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
