@@ -80,13 +80,6 @@ body {
     }
 }
 
-.opening_hours_bg {
-    background-image: url('../../public/pics/opening_hours_bg.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .footer {
     background: url('../../public/pics/about-bg.jpeg') center no-repeat;
     background-size: cover;
