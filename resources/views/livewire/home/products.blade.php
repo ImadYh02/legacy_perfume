@@ -11,12 +11,12 @@
         @for ($j = 0; $j < 8; $j++)
             <div class="card_product w-[47%] lg:w-1/4">
                 <div>
-                    <a href="#">
+                    <a href="/shop/detail" wire:navigate>
                         <img src="{{ asset('pics/perfume_2.jpeg') }}" class="lg:h-[400px] h-[250px] w-[300px]" alt="">
                     </a>
                 </div>
                 <div class="flex flex-col justify-center items-center gap-2 my-3">
-                    <a href="#" class="product_name text-[#8f8f8f] hover:text-[#ff7be5]">Gucci CC Marmont</a>
+                    <a href="/shop/detail" wire:navigate class="product_name text-[#8f8f8f] hover:text-[#ff7be5]">Gucci CC Marmont</a>
                     <!-- ===== Rating ===== -->
                     <div class="flex items-center">
                         @for ($i = 0; $i < 5; $i++)

@@ -15,7 +15,7 @@
 
                             <p class="text-xl md:max-w-[80%] text-black text-center lg:text-left lg:mb-10 mb-8">Enchant your senses with our floral and exotic perfumes, crafted to evoke passion and elegance. Find the perfect fragrance for every romantic moment.</p>
 
-                            <a href="#" class="bg-[#FF69B4] text-white py-3 px-6 w-36 rounded-full hover:bg-[#FF1493] transition duration-300">Discover Now</a>
+                            <a href="/shop" wire:navigate class="bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300 w-fit">Discover Now</a>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
 
                             <p class="text-xl md:max-w-[50%] text-white text-center mb-8">Immerse yourself in the perfect blend of tradition and modernity with our curated collection of exquisite fragrances. Discover your signature scent today.</p>
 
-                            <a href="#" class="bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">Shop Now </a>
+                            <a href="/shop" wire:navigate class="bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300 w-fit">Shop Now </a>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
 
                             <p class="text-xl md:max-w-[80%] text-black text-center lg:text-left lg:mb-10 mb-8">Experience the essence of sophistication with our exclusive range of premium perfumes. Elevate your senses with every spray.</p>
 
-                            <a href="#" class="bg-[#FF69B4] text-white py-3 px-6 w-44 rounded-full hover:bg-[#FF1493] transition duration-300">Explore Collection</a>
+                            <a href="/shop" wire:navigate class="bg-[#FF69B4] text-white py-3 px-6 w-fit rounded-full hover:bg-[#FF1493] transition duration-300">Explore Collection</a>
                         </div>
                     </div>
                 </div>

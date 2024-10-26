@@ -17,7 +17,7 @@
         
         <main class="w-[90%] mx-auto">
             {{-- ===== Start Banner ===== --}}
-            <div class="banner torder_banner h-[60vh] w-full flex justify-center items-center rounded-xl">
+            <div class="banner torder_banner lg:h-[60vh] h-[40vh] w-full flex justify-center items-center rounded-xl">
                 <h1 class="text-white font-bold lg:text-7xl text-5xl text-center tracking-wider uppercase">tracking order</h1>
             </div>
 

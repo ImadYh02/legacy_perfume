@@ -17,7 +17,7 @@
         
         <main class="w-[90%] mx-auto">
             {{-- ===== Start Banner ===== --}}
-            <div class="banner contact_banner h-[60vh] w-full flex justify-center items-center rounded-xl">
+            <div class="banner contact_banner lg:h-[60vh] h-[40vh] w-full flex justify-center items-center rounded-xl">
                 <h1 class="text-white font-bold lg:text-7xl text-5xl tracking-wider uppercase">contact</h1>
             </div>
             
@@ -97,7 +97,7 @@
                             <textarea type="text" id="input-label" rows="8" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="What do you want to say."></textarea>
                         </div>
                         {{-- ===== Track Button ===== --}}
-                        <a href="#" class="bg-[#FF69B4] text-white py-2 px-6 mx-auto lg:mx-0 w-fit rounded-full hover:bg-[#FF1493] transition duration-300"> Track </a>
+                        <a href="#" class="bg-[#FF69B4] text-white py-2 px-6 mx-auto lg:mx-0 w-fit rounded-full hover:bg-[#FF1493] transition duration-300"> Send Us </a>
                     </form>
                 </div>
             </div>
