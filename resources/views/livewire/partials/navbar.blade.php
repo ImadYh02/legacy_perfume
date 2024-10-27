@@ -48,7 +48,7 @@
     </nav>
 
     {{-- ===== Toggle Shopping Card ===== --}}
-    <div id="hs-offcanvas-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-300 transform h-full lg:max-w-[450px] max-w-xs z-[80] bg-white border-s" role="dialog" tabindex="-1" aria-labelledby="hs-offcanvas-right-label">
+    <div id="hs-offcanvas-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-300 transform h-full lg:min-w-[450px] max-w-xs z-[80] bg-white border-s" role="dialog" tabindex="-1" aria-labelledby="hs-offcanvas-right-label">
         {{-- ===== Header ===== --}}
         <div class="flex justify-between items-center mx-8 py-6 border-b">
             <h3 id="hs-offcanvas-right-label" class="text-[#2b2b2b] text-sm">
@@ -68,56 +68,68 @@
         {{-- ===== Product Items ===== --}}
         <div class="px-6 lg:h-[60%] h-[70%] overflow-y-auto overflow-x-hidden border-b">
             @for ($i = 0; $i < 3; $i++)
-            <div class="flex gap-x-4 py-4 border-b border-gray-200 w-full font-light text-gray-500">
-                <div class="w-full min-h-[100px] flex items-center gap-x-4">
-                    {{-- ===== Product Image ===== --}}
-                    <a href="#">
-                        <img class="max-w-[80px]" src="{{ asset('pics/perfume_1.jpg') }}" alt="">
-                    </a>
-                    <div class="w-full flex flex-col">
-                        {{-- ===== Title & Remove Icon --}}
-                        <div class="flex justify-between mb-2">
-                            {{-- ===== Title ===== --}}
-                            <a href="#" class="text-sm uppercase font-medium max-w-[240px] hover:underline">
-                                Black Fashion Black Fashion
-                            </a>
-                            {{-- ===== Remove Item ===== --}}
-                            <div class="text-xl cursor-pointer">
-                                <svg class="shrink-0 size-4 text-gray-500 hover:text-red-500 transition" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M18 6 6 18"></path>
-                                    <path d="m6 6 12 12"></path>
-                                </svg>
-                            </div>
-                        </div>
-        
-                        <div class="flex gap-x-2 h-[36px] text-sm">
-                            {{-- ===== Number Input ===== --}}
-                            <div class="py-0 px-0 lg:px-1 bg-white lg:border border-gray-200 rounded-full flex flex-1 items-center h-full max-w-[100px]" data-hs-input-number="">
-                                <div class="flex items-center gap-x-1.5">
-                                    <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Decrease" data-hs-input-number-decrement="">
-                                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M5 12h14"></path>
-                                        </svg>
-                                    </button>
-                                    <input class="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none" style="-moz-appearance: textfield;" type="number" aria-roledescription="Number field" value="0" data-hs-input-number-input="">
-                                    <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Increase" data-hs-input-number-increment="">
-                                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M5 12h14"></path>
-                                            <path d="M12 5v14"></path>
-                                        </svg>
-                                    </button>
+                <div class="flex gap-x-4 py-4 border-b border-gray-200 w-full font-light text-gray-500">
+                    <div class="w-full min-h-[100px] flex items-center gap-x-4">
+                        {{-- ===== Product Image ===== --}}
+                        <a href="#">
+                            <img class="max-w-[80px]" src="{{ asset('pics/perfume_1.jpg') }}" alt="">
+                        </a>
+                        <div class="w-full flex flex-col">
+                            {{-- ===== Title & Remove Icon --}}
+                            <div class="flex justify-between mb-2">
+                                {{-- ===== Title ===== --}}
+                                <a href="#" class="text-sm uppercase font-medium max-w-[240px] hover:underline">
+                                    Black Fashion Black Fashion
+                                </a>
+                                {{-- ===== Remove Item ===== --}}
+                                <div class="text-xl cursor-pointer">
+                                    <svg class="shrink-0 size-4 text-gray-500 hover:text-red-500 transition" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 6 6 18"></path>
+                                        <path d="m6 6 12 12"></path>
+                                    </svg>
                                 </div>
                             </div>
-                            {{-- ===== Item Price ===== --}}
-                            <div class="flex-1 flex justify-around items-center">49.99 MAD</div>
-                            {{-- ===== Final Price ===== --}}
-                            <div class="flex-1 flex justify-end items-center font-medium">99.99 MAD</div>
+            
+                            <div class="flex gap-x-2 h-[36px] text-sm">
+                                {{-- ===== Number Input ===== --}}
+                                <div class="py-0 px-0 lg:px-1 bg-white lg:border border-gray-200 rounded-full flex flex-1 items-center h-full max-w-[100px]" data-hs-input-number="">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Decrease" data-hs-input-number-decrement="">
+                                            <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M5 12h14"></path>
+                                            </svg>
+                                        </button>
+                                        <input class="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none" style="-moz-appearance: textfield;" type="number" aria-roledescription="Number field" value="0" data-hs-input-number-input="">
+                                        <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Increase" data-hs-input-number-increment="">
+                                            <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M5 12h14"></path>
+                                                <path d="M12 5v14"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                {{-- ===== Item Price ===== --}}
+                                <div class="flex-1 flex justify-around items-center">49.99 MAD</div>
+                                {{-- ===== Final Price ===== --}}
+                                <div class="flex-1 flex justify-end items-center font-medium">99.99 MAD</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endfor
         </div>
+            
+
+        {{-- ===== Empty Cart Content ===== --}}
+        {{-- <div class="flex mx-6 flex-col gap-5 justify-center items-center content-center h-full">
+            <img class="h-20" src="{{asset('pics/shopping-cart.png')}}" alt="">
+            <h1>
+                Your Cart is Empty!!
+            </h1>
+            <a href="/shop" wire:navigate class="flex w-full items-center justify-center bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">
+                Continue Shopping
+            </a>
+        </div> --}}
 
         {{-- ===== Sidebar ===== --}}
         <div class="flex flex-col gap-y-3 py-3 my-4 mx-8">

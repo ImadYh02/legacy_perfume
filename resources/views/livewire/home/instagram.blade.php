@@ -9,11 +9,21 @@
     </div>
 
     {{-- ===== INSTAGRAM Picture ===== --}}
-    <div class="mt-8 flex">
-        <img class="w-1/5 lg:h-60 h-24" src="{{asset('pics/about_1.jpeg')}}" alt="">
-        <img class="w-1/5 lg:h-60 h-24" src="{{asset('pics/perfume_1.jpg')}}" alt="">
-        <img class="w-1/5 lg:h-60 h-24" src="{{asset('pics/perfume_2.jpeg')}}" alt="">
-        <img class="w-1/5 lg:h-60 h-24" src="{{asset('pics/perfume_3.jpeg')}}" alt="">
-        <img class="w-1/5 lg:h-60 h-24" src="{{asset('pics/opening_hours_bg.jpg')}}" alt="">
+    <div class="mt-8 flex relative">
+        <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/about-pic.jpg')}}" alt="">
+        <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/perfume_1.jpg')}}" alt="">
+        <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/perfume_2.jpeg')}}" alt="">
+        <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/perfume_3.jpeg')}}" alt="">
+        <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/opening_hours_bg.jpg')}}" alt="">
+        <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/about-pic.jpg')}}" alt="">
+
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+            <a 
+                href="https://www.instagram.com/imad.iam"
+                target="_blanc"
+                class="texti text-[#FF69B4] hover:text-white font-extrabold bg-white hover:bg-[#FF69B4] lg:py-3 py-1.5 px-6 rounded-full transition duration-300">
+                @imad.iam
+            </a> 
+        </div>
     </div>
 </section>

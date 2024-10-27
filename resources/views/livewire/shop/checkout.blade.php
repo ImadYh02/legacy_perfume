@@ -40,10 +40,10 @@
                 <!-- Item -->
                 <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group">
                     <div class="min-w-7 min-h-7 inline-flex justify-center items-center text-xs align-middle">
-                        <span class="size-7 flex justify-center items-center shrink-0 bg-gray-800 font-medium text-white rounded-full">
+                        <span class="size-7 flex justify-center items-center shrink-0 bg-[#FF69B4] font-medium text-white rounded-full">
                             2
                         </span>
-                        <span class="ms-2 block text-sm font-medium text-gray-800">
+                        <span class="ms-2 block text-sm font-medium text-[#FF69B4]">
                             Checkout
                         </span>
                     </div>

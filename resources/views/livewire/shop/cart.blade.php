@@ -84,6 +84,17 @@
                                 </div>
                             </div>
                         @endfor
+
+                        {{-- ===== Empty Cart Content ===== --}}
+                        {{-- <div class="flex flex-col gap-5 justify-center items-center content-center my-auto">
+                            <img class="h-20" src="{{ asset('pics/sad_face.png') }}" alt="">
+                            <h1>
+                                Your Cart is Currently Empty!!
+                            </h1>
+                            <a href="/shop" wire:navigate class="flex w-fit items-center justify-center bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">
+                                Continue Shopping
+                            </a>
+                        </div> --}}
                     </div>
 
                     @livewire('shop.related_product')

@@ -10,21 +10,23 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/animation.js'])
     </head>
     <body>
-
         @livewire('partials.navbar')
+
         <main>
             @livewire('home.index')
             @livewire('home.promises')
             @livewire('home.category')
+            @livewire('home.marquee')
             @livewire('home.products')
             @livewire('home.quality')
             @livewire('home.awaiting')
             @livewire('home.testimonials')
             @livewire('home.instagram')
         </main>
+
         @livewire('partials.footer')
         
         @livewireScripts

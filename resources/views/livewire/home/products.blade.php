@@ -15,7 +15,7 @@
                         <img src="{{ asset('pics/perfume_2.jpeg') }}" class="lg:h-[400px] h-[250px] w-[300px]" alt="">
                     </a>
                 </div>
-                <div class="flex flex-col justify-center items-center gap-2 my-3">
+                <div class="flex flex-col justify-center items-center gap-2 my-3 text">
                     <a href="/shop/detail" wire:navigate class="product_name text-[#8f8f8f] hover:text-[#ff7be5]">Gucci CC Marmont</a>
                     <!-- ===== Rating ===== -->
                     <div class="flex items-center">
