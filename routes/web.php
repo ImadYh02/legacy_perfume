@@ -3,7 +3,9 @@
 use App\Livewire\Home\index;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', index::class);
+Route::get('/', function() {
+    return view('livewire.home.app');
+});
 
 Route::get('/shop', function() {
     return view('livewire.shop.app');
