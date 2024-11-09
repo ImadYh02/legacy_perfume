@@ -70,7 +70,7 @@ class CategoryResource extends Resource
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
 
-                // Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image'),
 
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),

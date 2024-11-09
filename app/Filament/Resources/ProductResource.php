@@ -17,6 +17,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Illuminate\Support\Str;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Forms\Set;
 use Filament\Tables\Table;
@@ -120,6 +121,9 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('category.name')
                     ->sortable()
                     ->searchable(),
+
+                ImageColumn::make('picture')
+                    ->size(50),
 
                 Tables\Columns\TextColumn::make('brand.name')
                     ->sortable()

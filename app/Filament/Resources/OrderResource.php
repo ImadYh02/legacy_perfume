@@ -34,7 +34,7 @@ class OrderResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 6;
 
     public static function form(Form $form): Form
     {
@@ -42,9 +42,9 @@ class OrderResource extends Resource
             ->schema([
                 Group::make()->schema([
                     Section::make('Order Information')->schema([
-                        Select::make('user_id')
+                        Select::make('customer_id')
                             ->label('Customer')
-                            ->relationship('user', 'name') // 3ela 9ebal l ORM function ly dert fel Model.
+                            ->relationship('customer', 'first_name') // 3ela 9ebal l ORM function ly dert fel Model.
                             ->searchable()
                             ->preload()
                             ->required(),
@@ -180,7 +180,7 @@ class OrderResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.name')
+                Tables\Columns\TextColumn::make('customer.first_name')
                     ->label('Customer')
                     ->sortable()
                     ->searchable(),
