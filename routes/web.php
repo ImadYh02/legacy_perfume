@@ -27,7 +27,7 @@ Route::get('/cart', function() {
     return view('livewire.shop.cart');
 });
 
-Route::get('/shop/checkout', function() {
+Route::get('/checkout', function() {
     return view('livewire.shop.checkout');
 });
 

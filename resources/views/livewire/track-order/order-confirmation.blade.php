@@ -15,44 +15,57 @@
 
 <body>
     @livewire('partials.navbar')
-    
-    <section class="bg-[#eee] py-8 md:py-16">
-        <div class="mx-auto max-w-2xl px-4 2xl:px-0">
-            <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl mb-2">Thanks for your order!</h2>
-            <p class="text-gray-500 mb-6 md:mb-8">Your order 
-                <a href="#" class="font-medium text-gray-900 hover:underline">#7564804</a> 
-                will be processed within 24 hours during working days. We will notify you by email once your order has been shipped
-            </p>
-            <div class="space-y-4 sm:space-y-2 rounded-lg border border-gray-100 bg-white p-6 mb-6 md:mb-8">
-                <dl class="sm:flex items-center justify-between gap-4">
-                    <dt class="font-normal mb-1 sm:mb-0 text-gray-500">Date</dt>
-                    <dd class="font-medium text-gray-900 sm:text-end">14 May 2024</dd>
-                </dl>
-                <dl class="sm:flex items-center justify-between gap-4">
-                    <dt class="font-normal mb-1 sm:mb-0 text-gray-500">Payment Method</dt>
-                    <dd class="font-medium text-gray-900 sm:text-end">JPMorgan monthly installments</dd>
-                </dl>
-                <dl class="sm:flex items-center justify-between gap-4">
-                    <dt class="font-normal mb-1 sm:mb-0 text-gray-500">Name</dt>
-                    <dd class="font-medium text-gray-900 sm:text-end">Flowbite Studios LLC</dd>
-                </dl>
-                <dl class="sm:flex items-center justify-between gap-4">
-                    <dt class="font-normal mb-1 sm:mb-0 text-gray-500">Address</dt>
-                    <dd class="font-medium text-gray-900 sm:text-end">34 Scott Street, San Francisco, California, USA</dd>
-                </dl>
-                <dl class="sm:flex items-center justify-between gap-4">
-                    <dt class="font-normal mb-1 sm:mb-0 text-gray-500">Phone</dt>
-                    <dd class="font-medium text-gray-900 sm:text-end">+(123) 456 7890</dd>
-                </dl>
+
+    <div class="container mx-auto p-4 md:p-8 max-w-3xl">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-[#FF69B4] p-6 text-white text-center">
+                <h1 class="text-3xl font-bold mb-2">Thank You for Your Order!</h1>
+                <p class="text-xl">Order ID: #12345</p>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="/shop" wire:navigate class="flex w-fit items-center justify-center bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">
-                    Return to shopping
-                </a>
+            <div class="p-6 space-y-6">
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4">Order Details</h2>
+                    <div class="bg-gray-50 rounded-lg p-4 flex items-start space-x-4">
+                        <img src="{{asset('pics/perfume_1.jpg')}}" alt="Product Image" class="w-24 h-24 object-cover rounded">
+                        <div>
+                            <h3 class="font-semibold text-lg">Wireless Noise-Cancelling Headphones</h3>
+                            <p class="text-gray-600">Color: Black</p>
+                            <p class="text-gray-600">Quantity: 1</p>
+                            <p class="font-semibold mt-2">$249.99</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4">Shipping Information</h2>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p><span class="font-semibold">Shipping Method:</span> Standard Shipping (3-5 business days)</p>
+                        <p><span class="font-semibold">Tracking Number:</span> 1Z999AA1123456789</p>
+                        <p class="mt-2"><span class="font-semibold">Estimated Delivery Date:</span> June 15, 2023</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4">Shipping Address</h2>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <p>John Doe</p>
+                        <p>123 Main Street</p>
+                        <p>Apt 4B</p>
+                        <p>New York, NY 10001</p>
+                        <p>United States</p>
+                    </div>
+                </section>
+
+                <div class="text-center">
+                    <p class="text-gray-600 mb-4">We'll send a confirmation email with order details and tracking info.</p>
+                    <a href="#" class="inline-block bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition duration-300">
+                        Track Your Order
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
-    
+    </div>
+
     @livewire('partials.footer')
 </body>
   

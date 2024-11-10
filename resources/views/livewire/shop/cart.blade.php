@@ -16,7 +16,7 @@
 <body>
     @livewire('partials.navbar')
 
-    <section class="py-8 md:py-16 bg-[#eee]">
+    <section class="py-8 md:py-16">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
             <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl">Shopping Cart</h2>
 
@@ -134,7 +134,7 @@
                         </dl>
                     </div>
 
-                    <a href="/shop/checkout" wire:navigate class="flex w-full items-center justify-center bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">
+                    <a href="/checkout" wire:navigate class="flex w-full items-center justify-center bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">
                         Proceed to Checkout
                     </a>
 

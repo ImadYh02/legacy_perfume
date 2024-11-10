@@ -19,53 +19,9 @@
         <a class="text-xl font-semibold text-white mx-auto" href="/" wire:navigate>Brand</a>
     </nav>
     
-    <section class="py-8 md:py-16 bg-[#eee]">
+    <section class="py-8 bg-[#eee]">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-            <!-- ===== Stepper ===== -->
-            <ul class="relative flex flex-row gap-x-2">
-                <!-- Item -->
-                <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group">
-                    <div class="min-w-7 min-h-7 inline-flex justify-center items-center text-xs align-middle">
-                        <span class="size-7 flex justify-center items-center shrink-0 bg-gray-800 font-medium text-white rounded-full">
-                            1
-                        </span>
-                        <span class="ms-2 block text-sm font-medium text-gray-800">
-                            Cart
-                        </span>
-                    </div>
-                    <div class="w-full h-px flex-1 bg-black group-last:hidden"></div>
-                </li>
-                <!-- End Item -->
-
-                <!-- Item -->
-                <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group">
-                    <div class="min-w-7 min-h-7 inline-flex justify-center items-center text-xs align-middle">
-                        <span class="size-7 flex justify-center items-center shrink-0 bg-[#FF69B4] font-medium text-white rounded-full">
-                            2
-                        </span>
-                        <span class="ms-2 block text-sm font-medium text-[#FF69B4]">
-                            Checkout
-                        </span>
-                    </div>
-                    <div class="w-full h-px flex-1 bg-black group-last:hidden"></div>
-                </li>
-                <!-- End Item -->
-
-                <!-- Item -->
-                <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group">
-                    <div class="min-w-7 min-h-7 inline-flex justify-center items-center text-xs align-middle">
-                        <span class="size-7 flex justify-center items-center shrink-0 bg-gray-800 font-medium text-white rounded-full">
-                            3
-                        </span>
-                        <span class="ms-2 block text-sm font-medium text-gray-800">
-                            Order Summary
-                        </span>
-                    </div>
-                    <div class="w-full h-px flex-1 bg-black group-last:hidden"></div>
-                </li>
-                <!-- End Item -->
-            </ul>
-            <!-- ===== End Stepper ===== -->
+            <h1 class="text-3xl font-bold mb-8 text-center">Checkout</h1>
         
             <div class="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-12 xl:gap-16">
                 {{-- ===== Delivery Detail ===== --}}
@@ -197,55 +153,46 @@
                 {{-- ===== Order Total ===== --}}
                 <div class="mt-6 w-full bg-white p-4 rounded-xl space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md">
                     <div class="flow-root">
-                        <div class="-my-3 divide-y divide-gray-200">
-                            {{-- ===== Subtotal ===== --}}
-                            <dl class="flex items-center justify-between gap-4 py-3">
-                                <dt class="text-base font-normal text-gray-500">
-                                    Subtotal
-                                </dt>
-                                <dd class="text-base font-medium text-gray-900">
-                                    $8,094.00
-                                </dd>
-                            </dl>
-                  
-                            {{-- ===== Savings ===== --}}
-                            <dl class="flex items-center justify-between gap-4 py-3">
-                                <dt class="text-base font-normal text-gray-500">
-                                    Savings
-                                </dt>
-                                <dd class="text-base font-medium text-green-500">
-                                    0
-                                </dd>
-                            </dl>
-                          
-                            {{-- ===== Store Pickup ===== --}}
-                            <dl class="flex items-center justify-between gap-4 py-3">
-                                <dt class="text-base font-normal text-gray-500">
-                                    Store Pickup
-                                </dt>
-                                <dd class="text-base font-medium text-gray-900">
-                                    $99
-                                </dd>
-                            </dl>
-                          
-                            {{-- ===== TAX ===== --}}
-                            <dl class="flex items-center justify-between gap-4 py-3">
-                                <dt class="text-base font-normal text-gray-500">
-                                    Tax
-                                </dt>
-                                <dd class="text-base font-medium text-gray-900">
-                                    $199
-                                </dd>
-                            </dl>
-                          
-                            <dl class="flex items-center justify-between gap-4 py-3">
-                                <dt class="text-base font-bold text-gray-900">
-                                    Total
-                                </dt>
-                                <dd class="text-base font-bold text-gray-900">
-                                    $8,392.00
-                                </dd>
-                            </dl>
+                        <div class="space-y-4 mb-4">
+                            <div class="border-b pb-4">
+                                <h3 class="font-semibold mb-2">Product Details</h3>
+                                <ul class="space-y-2">
+                                    <li class="flex justify-between items-center">
+                                        <div>
+                                            <span class="font-medium">Product A</span>
+                                            <span class="block text-sm text-gray-500">Quantity: 2</span>
+                                        </div>
+                                        <span>$49.99</span>
+                                    </li>
+                                    <li class="flex justify-between items-center">
+                                        <div>
+                                            <span class="font-medium">Product B</span>
+                                            <span class="block text-sm text-gray-500">Quantity: 1</span>
+                                        </div>
+                                        <span>$29.99</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span>Subtotal</span>
+                                    <span>$129.97</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Shipping</span>
+                                    <span>$10.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Tax</span>
+                                    <span>$10.40</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-t pt-4">
+                            <div class="flex justify-between font-semibold text-lg">
+                                <span>Total</span>
+                                <span>$150.37</span>
+                            </div>
                         </div>
                     </div>
               
