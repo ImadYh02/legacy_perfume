@@ -76,7 +76,22 @@ class ProductResource extends Resource
                             ->numeric()
                             ->required()
                             ->prefix('DH'),
-                    ]),
+                    
+                        TextInput::make('old_price')
+                            ->numeric()
+                            ->required()
+                            ->prefix('DH')
+                            ->afterStateUpdated(function ($state, $set, $get) {
+                                $price = $get('price');
+                                
+                                if ($state <= $price) {
+                                    $set('old_price', null); // Optionally reset the old_price field
+                                    // Return error message
+                                    return 'Old price must be greater than price.';
+                                }
+                            }),
+                    ]),                    
+                    
 
                     Section::make('Associations')->schema([
                         Select::make('category_id')
@@ -93,9 +108,9 @@ class ProductResource extends Resource
                     ]),
 
                     Section::make('Associations')->schema([
-                        Toggle::make('in_stock')
+                        TextInput::make('quantity_in_stock')
                             ->required()
-                            ->default(true),
+                            ->maxLength(255),
 
                         Toggle::make('is_active')
                             ->required()
@@ -122,7 +137,7 @@ class ProductResource extends Resource
                     ->sortable()
                     ->searchable(),
 
-                ImageColumn::make('picture')
+                ImageColumn::make('images')
                     ->size(50),
 
                 Tables\Columns\TextColumn::make('brand.name')
@@ -138,9 +153,6 @@ class ProductResource extends Resource
                     ->boolean(),
 
                 Tables\Columns\IconColumn::make('is_featured')
-                    ->boolean(),
-
-                Tables\Columns\IconColumn::make('in_stock')
                     ->boolean(),
 
                 Tables\Columns\IconColumn::make('on_sale')

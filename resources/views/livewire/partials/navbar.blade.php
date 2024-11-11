@@ -48,7 +48,7 @@
     </nav>
 
     {{-- ===== Toggle Shopping Card ===== --}}
-    <div id="hs-offcanvas-right" class="relative hs-overlay z-10 hs-overlay hidden" role="dialog" tabindex="-1" aria-labelledby="hs-offcanvas-right-label">
+    <div id="hs-offcanvas-right" class="relative hs-overlay z-[90] hs-overlay hidden" role="dialog" tabindex="-1" aria-labelledby="hs-offcanvas-right-label">
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
         <div class="fixed inset-0 overflow-hidden">
             <div class="absolute inset-0 overflow-hidden">

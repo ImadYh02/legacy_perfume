@@ -17,9 +17,10 @@ class Product extends Model
         'images',
         'description',
         'price',
+        'old_price',
+        'quantity_in_stock',
         'is_active',
         'is_featured',
-        'in_stock',
         'on_slae',
     ];
 
