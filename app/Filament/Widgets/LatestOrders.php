@@ -27,7 +27,7 @@ class LatestOrders extends BaseWidget {
                     ->label('Order ID')
                     ->searchable(),
 
-                Tables\Columns\TextColumn::make('user.name')
+                Tables\Columns\TextColumn::make('customer.first_name')
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('grand_total')

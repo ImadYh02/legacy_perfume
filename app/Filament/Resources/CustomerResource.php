@@ -36,10 +36,16 @@ class CustomerResource extends Resource
                     ->required(),
                 TextInput::make('city')
                     ->required(),
-                TextInput::make('phone_number')
-                    ->required(),
+                TextInput::make('zip_code')
+                    ->required()
+                    ->numeric()
+                    ->maxLength(255),
                 TextInput::make('email')
                     ->email()
+                    ->required(),
+                TextInput::make('phone_number')
+                    ->required(),
+                Forms\Components\TextArea::make('street_address')
                     ->required(),
                 TextInput::make('note')
                     ->nullable(),
@@ -57,6 +63,10 @@ class CustomerResource extends Resource
                 TextColumn::make('country')
                     ->searchable(),
                 TextColumn::make('city')
+                    ->searchable(),
+                TextColumn::make('zip_code')
+                    ->searchable(),
+                TextColumn::make('street_address')
                     ->searchable(),
                 TextColumn::make('phone_number')
                     ->searchable(),

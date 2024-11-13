@@ -196,22 +196,42 @@ class OrderResource extends Resource
 
                 Tables\Columns\TextColumn::make('payement_status')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->badge(),
 
                 Tables\Columns\TextColumn::make('shipping_method')
                     ->sortable()
                     ->searchable(), 
 
-                Tables\Columns\SelectColumn::make('status')
-                    ->options([
-                        'new' => 'New',
-                        'processing' => 'Processing',
-                        'shipped' => 'Shipped',
-                        'delivered' => 'Delivred',
-                        'canceled' => 'Cancelled',
-                    ])
-                    ->searchable()
-                    ->sortable(), 
+                // Tables\Columns\SelectColumn::make('status')
+                //     ->options([
+                //         'new' => 'New',
+                //         'processing' => 'Processing',
+                //         'shipped' => 'Shipped',
+                //         'delivered' => 'Delivred',
+                //         'canceled' => 'Cancelled',
+                //     ])
+                //     ->searchable()
+                //     ->sortable(), 
+
+                Tables\Columns\TextColumn::make('status')
+                    ->badge()
+                    ->color(fn (string $state):string => match($state) {
+                        'new' => 'info',
+                        'processing' => 'warning',
+                        'shipped' => 'success',
+                        'delivered' => 'success',
+                        'canceled' => 'danger',
+                    })
+                    ->icon(fn (string $state):string => match($state) {
+                        'new' => 'heroicon-m-sparkles',
+                        'processing' => 'heroicon-m-arrow-path',
+                        'shipped' => 'heroicon-m-truck',
+                        'delivered' => 'heroicon-m-check-badge',
+                        'canceled' => 'heroicon-m-x-circle',
+                    })
+                    ->sortable(),
+
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->sortable()
@@ -240,12 +260,12 @@ class OrderResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            AddressRelationManager::class
-        ];
-    }
+    // public static function getRelations(): array
+    // {
+    //     return [
+    //         AddressRelationManager::class
+    //     ];
+    // }
 
     public static function getNavigationBadge(): ?string {
         return static::getModel()::count();
