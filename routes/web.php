@@ -1,14 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Home\App;
+use App\Livewire\Shop\Index;
 
-Route::get('/', function() {
-    return view('livewire.home.app');
-});
+Route::get('/', App::class);
 
-Route::get('/shop', function() {
-    return view('livewire.shop.app');
-});
+Route::get('/shop', Index::class);
+
+// Route::get('/shop', function() {
+//     return view('livewire.shop.app');
+// });
 
 Route::get('/track-order', function() {
     return view('livewire.track-order.app');
@@ -18,7 +20,7 @@ Route::get('/contact', function() {
     return view('livewire.contact.app');
 });
 
-Route::get('/shop/detail', function() {
+Route::get('/shop/{slug}', function() {
     return view('livewire.shop.product-details');
 });
 
