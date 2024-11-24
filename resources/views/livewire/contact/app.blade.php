@@ -17,8 +17,15 @@
         
         <main class="w-[90%] mx-auto">
             {{-- ===== Start Banner ===== --}}
-            <div class="banner contact_banner lg:h-[60vh] h-[40vh] w-full flex justify-center items-center rounded-xl">
-                <h1 class="text-white font-bold lg:text-7xl text-5xl tracking-wider uppercase">contact</h1>
+            <div class="relative lg:h-[60vh] h-[40vh] w-full flex justify-center items-center rounded-xl overflow-hidden">
+                <!-- Video Background -->
+                <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+                    <source src="{{ asset('vids/contact_banner_video.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            
+                <!-- H1 Content -->
+                <h1 class="text-white font-bold lg:text-7xl text-5xl text-center tracking-wider uppercase">Contact Us</h1>
             </div>
             
             {{-- ===== Start Main Section ===== --}}

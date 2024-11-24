@@ -17,8 +17,15 @@
         
         <main class="w-[90%] mx-auto">
             {{-- ===== Start Banner ===== --}}
-            <div class="banner torder_banner lg:h-[60vh] h-[40vh] w-full flex justify-center items-center rounded-xl">
-                <h1 class="text-black font-bold lg:text-7xl text-5xl text-center tracking-wider uppercase">tracking order</h1>
+            <div class="relative lg:h-[60vh] h-[40vh] w-full flex justify-center items-center rounded-xl overflow-hidden">
+                <!-- Video Background -->
+                <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+                    <source src="{{ asset('vids/torder_banner_video.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            
+                <!-- H1 Content -->
+                <h1 class="text-white font-bold lg:text-7xl text-5xl text-center tracking-wider uppercase">Tracking Order</h1>
             </div>
 
             {{-- ===== Start Form ===== --}}
@@ -48,7 +55,7 @@
             </div>
         </main>
 
-        @livewire('partials.maps')
+        @livewire('home.instagram')
         @livewire('partials.footer')
         
         @livewireScripts

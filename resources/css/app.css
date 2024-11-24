@@ -51,17 +51,6 @@ body {
     transform: scale(1.2);
 }
 
-.product-pic {
-    /* background-image: url('../../public/pics/perfume_1.jpg'); */
-    background-image: url('../../public/pics/perfume_2.jpeg');
-    background-size: cover;
-    background-position: center;
-}
-
-.group:hover .product-pic {
-    background-image: url('../../public/pics/perfume_1.jpg');
-}
-
 /* Hide Price ans Display Product's Card */
 @media (min-width: 1024px) {
     .product_name {
@@ -81,28 +70,6 @@ body {
 
 .footer {
     background: url('../../public/pics/about-bg.jpeg') center no-repeat;
-    background-size: cover;
-}
-
-/* Shop Banner */
-.shop_banner {
-    background: url('../../public/pics/product-banner1.jpg');
-}
-
-/* Track Order Banner */
-.torder_banner {
-    background: url('../../public/pics/torder_banner.webp');
-}
-
-/* Contact Banner */
-.contact_banner {
-    background: url('../../public/pics/contact-banner.jpg');
-}
-
-/* Common Banner Style */
-.banner {
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
 }
 

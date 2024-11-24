@@ -11,7 +11,7 @@ class App extends Component
     public function render() {
         $categories = Category::where('is_active', 1)->get();
 
-        $productQuery = Product::get();
+        $productQuery = Product::where('is_featured', 1)->get();
 
         return view('livewire.home.app', [
             'categories' => $categories,

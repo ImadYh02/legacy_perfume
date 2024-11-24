@@ -254,13 +254,24 @@
             <div class="mt-10 mx-4 lg:mx-0 flex flex-row lg:gap-0 gap-4 flex-wrap">
                 @foreach ($products as $product)
                     <div class="card_product w-[47%] lg:w-1/4">
-                        <div>
+                        <div class="relative group">
                             <a href="/shop/{{ $product->slug }}" wire:navigate>
-                                <img src="{{ url('storage', $product->images[1]) }}" class="lg:h-[400px] h-[250px] w-[300px]" alt="">
+                                <!-- First Image -->
+                                <img 
+                                    src="{{ url('storage', $product->images[0]) }}" 
+                                    class="lg:h-[400px] h-[250px] w-[300px] absolute top-0 left-0 transition-opacity duration-500 group-hover:opacity-0" 
+                                    alt="{{ $product->name }}">
+                    
+                                <!-- Second Image -->
+                                <img 
+                                    src="{{ url('storage', $product->images[1]) }}" 
+                                    class="lg:h-[400px] h-[250px] w-[300px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" 
+                                    alt="{{ $product->name }}">
                             </a>
                         </div>
                         <div class="flex flex-col justify-center items-center gap-2 my-3 text">
                             <a href="/shop/{{ $product->slug }}" alt="{{ $product->name }}" wire:navigate class="product_name text-[black] hover:text-[#ff7be5]">{{ $product->name }}</a>
+                    
                             <!-- ===== Rating ===== -->
                             <div class="flex items-center">
                                 @for ($i = 0; $i < 5; $i++)
@@ -269,23 +280,23 @@
                                     </svg>
                                 @endfor
                             </div>
-        
+                    
                             <h3 class="product_price font-bold">{{ Number::currency($product->price, 'MAD') }}</h3>
-        
+                    
                             <a class="product_shop flex justify-center items-center gap-3 lg:hidden hover:text-[#ff7be5] cursor-pointer" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-offcanvas-right" data-hs-overlay="#hs-offcanvas-right">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                                 </svg>
                                 Add to Cart
                             </a>
                         </div>
-                    </div>
+                    </div>                
                 @endforeach
             </div>
         
             {{-- ===== Button Shop ===== --}}
             <div class="flex justify-center mt-4">
-                <a href="#" class="bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">Explore Collection</a> 
+                <a href="/shop" wire:navigate class="bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">Explore Collection</a> 
             </div>
         </section>
         {{-- ===== End Products Section ===== --}}
@@ -360,39 +371,6 @@
             </div>
         </section>
         {{-- ===== End Testimonials Section ===== --}}
-
-
-        {{-- ===== Start Instagram Section ===== --}}
-        <section class="max-w-screen mt-8 min:h-screen flex-col justify-center items-center text-black">
-            {{-- ===== Heading ===== --}}
-            <div class="flex-col justify-center items-center">
-                <div class="mx-auto">
-                    <img src="{{asset('pics/insta_logo.png')}}" class="h-10 w-10 mx-auto" alt="">
-                </div>
-                <h2 class="text-2xl lg:text-3xl font-bold text-center text-[black] my-2 lg:mb-4">INSTAGRAM</h2>
-                <div class="h-1 w-28 bg-[#ff7be5] mx-auto"></div>
-            </div>
-        
-            {{-- ===== INSTAGRAM Picture ===== --}}
-            <div class="mt-8 flex relative">
-                <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/about-pic.jpg')}}" alt="">
-                <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/perfume_1.jpg')}}" alt="">
-                <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/perfume_2.jpeg')}}" alt="">
-                <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/perfume_3.jpeg')}}" alt="">
-                <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/opening_hours_bg.jpg')}}" alt="">
-                <img class="w-1/6 lg:h-52 h-24" src="{{asset('pics/about-pic.jpg')}}" alt="">
-        
-                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-                    <a 
-                        href="https://www.instagram.com/imad.iam"
-                        target="_blanc"
-                        class="texti text-[#FF69B4] hover:text-white font-extrabold bg-white hover:bg-[#FF69B4] lg:py-3 py-1.5 px-6 rounded-full transition duration-300">
-                        @imad.iam
-                    </a> 
-                </div>
-            </div>
-        </section>
-        {{-- ===== End Instagram Section ===== --}}
     </main>
 
     {{-- @livewire('partials.footer') --}}
