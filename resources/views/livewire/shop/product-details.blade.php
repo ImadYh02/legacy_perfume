@@ -11,13 +11,18 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    @livewire('partials.navbar')
+    {{-- @livewire('partials.navbar') --}}
     
     <main class="lg:max-w-[80%] w-screen mx-auto">
         {{-- ===== Product Detail ===== --}}
         <div class="lg:h-[90vh] flex flex-col lg:flex-row justify-between items-center">
-            <div class="lg:w-1/2 w-full h-full justify-center content-center items-center md:px-[100px] md:py-[60px]">
-                <img class="w-[450px] lg:h-[460px] h-[300px] object-cover lg:rounded-xl" src="{{ asset('pics/perfume_1.jpg') }}" alt="">
+            <div class="lg:w-1/2 w-full h-full justify-center content-center items-center md:px-[100px] md:py-[40px]">
+                <img id="mainImage" class="w-[450px] lg:h-[350px] h-[300px] object-cover lg:rounded-xl" src="{{ url('storage', $product->images[0]) }}" alt="">
+                <div class="flex justify-between gap-2 mt-4">
+                    @foreach ($product->images as $image)
+                    <img class="w-[450px] lg:h-[130px] h-[150px] object-cover cursor-pointer hover:opacity-75 transition-opacity" src="{{ url('storage', $image) }}" alt="{{ $product->name }}" onclick="changeImage(this.src)">
+                    @endforeach
+                </div>
             </div>
     
             <div class="lg:w-1/2 max-w-full">
@@ -26,27 +31,20 @@
                         Sneaker company
                     </p>
                     <h1 class="text-3xl md:text-4xl capitalize font-[700]">
-                        Fall limited edition <br /> sneakers
+                        {{ $product->name }}
                     </h1>
                     <p class="hidden md:block my-10 leading-7 text-[#888072]">
-                        These low-profile sneakers are your perfect casual wear <br />
-                        companion. Featuring a durable rubber outer sole, they'll <br />
-                        withstand everything the weather can offer.
-                    </p>
-                    <p class="md:hidden my-6 leading-7">
-                        These low-profile sneakers are your perfect <br /> casual wear
-                        companion. Featuring a durable <br /> rubber outer sole, they'll
-                        withstand every - thing the br weather can offer.
+                        {{ $product->description }}
                     </p>
           
                     <div class="flex items-center">
-                        <span class="text-3xl font-[700] mr-4">49.99 MAD</span>
+                        <span class="text-3xl font-[700] mr-4">{{ Number::currency($product->price, 'MAD') }}</span>
                         <span class="font-[700] py-1 px-2 rounded-lg bg-[#FF69B4] text-white">
                             50%
                         </span>
                     </div>
                     <p class="line-through text-[#888072] font-[700] mt-2">
-                        74.99 MAD
+                        {{ Number::currency($product->old_price, 'MAD') }}
                     </p>
                 </div>
     
@@ -82,7 +80,13 @@
         @livewire('shop.related_product')
     </main>    
 
-    @livewire('partials.footer')
+    {{-- @livewire('partials.footer') --}}
     @livewireScripts
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+    </script>
 </body>
 </html>

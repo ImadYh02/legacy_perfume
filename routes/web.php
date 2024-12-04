@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Home\App;
 use App\Livewire\Shop\Index;
+use App\Livewire\Shop\ProductDetails;
 
 Route::get('/', App::class);
 
@@ -20,9 +21,7 @@ Route::get('/contact', function() {
     return view('livewire.contact.app');
 });
 
-Route::get('/shop/{slug}', function() {
-    return view('livewire.shop.product-details');
-});
+Route::get('/shop/{slug}', ProductDetails::class);
 
 Route::get('/cart', function() {
     return view('livewire.shop.cart');

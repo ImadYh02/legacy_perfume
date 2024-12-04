@@ -26,24 +26,57 @@
         </div>
         
         {{-- ===== Start Tabs ===== --}}
-        <div class="border-b border-gray-200">
-            <nav class="flex gap-x-4" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
-                <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-[#FF1493] hs-tab-active:text-[#FF1493] py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-black hover:text-[#FF1493] focus:outline-none focus:text-[#FF1493] disabled:opacity-50 disabled:pointer-events-none active" id="tabs-with-underline-item-1" aria-selected="true" data-hs-tab="#tabs-with-underline-1" aria-controls="tabs-with-underline-1" role="tab">
-                    All
-                </button>
-                <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-[#FF1493] hs-tab-active:text-[#FF1493] py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-black hover:text-[#FF1493] focus:outline-none focus:text-[#FF1493] disabled:opacity-50 disabled:pointer-events-none" id="tabs-with-underline-item-2" aria-selected="false" data-hs-tab="#tabs-with-underline-2" aria-controls="tabs-with-underline-2" role="tab">
-                    Man
-                </button>
-                <button type="button" class="hs-tab-active:font-semibold hs-tab-active:border-[#FF1493] hs-tab-active:text-[#FF1493] py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-black hover:text-[#FF1493] focus:outline-none focus:text-[#FF1493] disabled:opacity-50 disabled:pointer-events-none" id="tabs-with-underline-item-3" aria-selected="false" data-hs-tab="#tabs-with-underline-3" aria-controls="tabs-with-underline-3" role="tab">
-                    Woman
-                </button>
-            </nav>
+        <div class="bg-white p-4 rounded-lg shadow mb-4 mt-7">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0 md:space-x-4">
+                <!-- Category Filter -->
+                <div class="flex items-center space-x-4">
+                    <span class="font-medium">Category:</span>
+                    <div class="flex space-x-4">
+                        @foreach ($categories as $category)
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="category" value="all" checked class="form-radio text-blue-600">
+                                <span class="ml-2">{{ $category->name }}</span>
+                            </label>
+                        @endforeach
+                    </div>
+                </div>
+
+                <!-- Price Range Filter -->
+                <div class="flex items-center space-x-4">
+                    <span class="font-medium">Price:</span>
+                    <div class="flex items-center space-x-2">
+                        <input type="number" id="min-price" min="0" max="1000" value="0" class="w-20 px-2 py-1 border rounded">
+                        <span>to</span>
+                        <input type="number" id="max-price" min="0" max="1000" value="1000" class="w-20 px-2 py-1 border rounded">
+                    </div>
+                </div>
+
+                <!-- Sorting Dropdown -->
+                <div class="flex items-center space-x-4">
+                    <span class="font-medium">Sort by:</span>
+                    <div class="relative">
+                        <select class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                            <option>Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest</option>
+                            <option>Popular</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
+        {{-- ===== Start Shop Section ===== --}}
         <div class="my-3">
             <div id="tabs-with-underline-1" role="tabpanel" aria-labelledby="tabs-with-underline-item-1" class="mt-10 mx-4 lg:mx-0 flex flex-row gap-4 flex-wrap">
                 @foreach ($products as $product)
-                <div class="card_product w-[47%] lg:w-[24%]">
+                <div class="card_product w-[47%] lg:w-[24%]" wire:key="{{ $product->id }}">
                     <div class="relative group">
                         <a href="/shop/{{ $product->slug }}" wire:navigate>
                             <!-- First Image -->
