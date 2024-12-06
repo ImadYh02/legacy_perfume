@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Contact;
+namespace App\Livewire;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class App extends Component
 {
     public function render()
     {
-        return view('livewire.contact.app');
+        return view('livewire.track-order');
     }
 }

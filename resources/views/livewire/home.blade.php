@@ -177,7 +177,7 @@
                             class="text-center"
                             style="font-weight: 500; font-size: 35px; line-height: 49px">
                                 {{-- Timeless Scents for Him --}}
-                                {{ $category->name }}
+                                {{ $category->name }} Collection
                             </h1>
                             <a
                             wire:navigate

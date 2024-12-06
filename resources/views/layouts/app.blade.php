@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'Discover the Essence of Luxury - Premium Perfumes for Every Occasion' }}</title>
 
@@ -44,10 +45,11 @@
         {{ $slot }}
     </main>
 
-    @livewire('home.instagram')
+    @livewire('partials.instagram')
     @livewire('partials.footer')
+    
+    @livewireScripts
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    @livewireScripts
 </body>
 </html>

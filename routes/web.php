@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Home\App;
-use App\Livewire\Shop\Index;
-use App\Livewire\Shop\ProductDetails;
+use App\Livewire\Home;
+use App\Livewire\Shop;
+use App\Livewire\ProductDetails;
 
-Route::get('/', App::class);
+Route::get('/', Home::class);
 
-Route::get('/shop', Index::class);
+Route::get('/shop', Shop::class);
 
 // Route::get('/shop', function() {
 //     return view('livewire.shop.app');

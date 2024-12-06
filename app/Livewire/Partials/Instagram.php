@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Home;
+namespace App\Livewire\Partials;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class Instagram extends Component
 {
     public function render()
     {
-        return view('livewire.home.instagram');
+        return view('livewire.partials.instagram');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Shop;
+namespace App\Livewire;
 
 use App\Models\Product;
 use Livewire\Attributes\Title;
@@ -16,7 +16,7 @@ class ProductDetails extends Component {
     }
 
     public function render() {
-        return view('livewire.shop.product-details', [
+        return view('livewire.product-details', [
             'product' => Product::where('slug', $this->slug)->firstOrFail(),
         ])
             ->layout('layouts.app');

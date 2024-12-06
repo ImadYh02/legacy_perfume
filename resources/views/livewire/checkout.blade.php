@@ -98,51 +98,53 @@
                     </div>
               
                     {{-- ===== Payment ===== --}}
-                    <div class="space-y-2">
-                        <h3 class="text-xl font-semibold text-gray-900">
-                            Payment
-                        </h3>
-                    
-                        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-                            <div class="rounded-lg border border-gray-200 bg-white p-4 ps-4">
-                                <div class="flex items-start">
-                                    <div class="flex h-5 items-center">
-                                        <input checked id="pay-on-delivery" aria-describedby="pay-on-delivery-text" type="radio" name="payment-method" value="" class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600" />
-                                    </div>
-                          
-                                    <div class="ms-4 text-sm">
-                                        <label for="pay-on-delivery" class="font-medium leading-none text-gray-900">
-                                            Payment on delivery
-                                        </label>
-                                        <p id="pay-on-delivery-text" class="mt-1 text-xs font-normal text-gray-500">
-                                            +$15 payment processing fee
-                                        </p>
+                    <div class="lg:flex gap-32">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-semibold text-gray-900">
+                                Payment
+                            </h3>
+                        
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="rounded-lg border border-gray-200 bg-white p-4 ps-4">
+                                    <div class="flex items-start">
+                                        <div class="flex h-5 items-center">
+                                            <input checked id="pay-on-delivery" aria-describedby="pay-on-delivery-text" type="radio" name="payment-method" value="" class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600" />
+                                        </div>
+                              
+                                        <div class="ms-4 text-sm">
+                                            <label for="pay-on-delivery" class="font-medium leading-none text-gray-900">
+                                                Payment on delivery
+                                            </label>
+                                            <p id="pay-on-delivery-text" class="mt-1 text-xs font-normal text-gray-500">
+                                                +$15 payment processing fee
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                
-                    {{-- ===== Delivery Methds ===== --}}
-                    <div class="space-y-2">
-                        <h3 class="text-xl font-semibold text-gray-900">
-                            Delivery Methods
-                        </h3>
-                  
-                        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-                            <div class="rounded-lg border border-gray-200 bg-white p-4 ps-4">
-                                <div class="flex items-start">
-                                    <div class="flex h-5 items-center">
-                                        <input id="dhl" aria-describedby="dhl-text" type="radio" name="delivery-method" value="" class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600" checked />
-                                    </div>
-                        
-                                    <div class="ms-4 text-sm">
-                                        <label for="dhl" class="font-medium leading-none text-gray-900">
-                                            $15 - DHL Fast Delivery
-                                        </label>
-                                        <p id="dhl-text" class="mt-1 text-xs font-normal text-gray-500">
-                                            Get it by Tommorow
-                                        </p>
+                    
+                        {{-- ===== Delivery Methds ===== --}}
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-semibold text-gray-900">
+                                Delivery Methods
+                            </h3>
+                      
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="rounded-lg border border-gray-200 bg-white p-4 ps-4">
+                                    <div class="flex items-start">
+                                        <div class="flex h-5 items-center">
+                                            <input id="dhl" aria-describedby="dhl-text" type="radio" name="delivery-method" value="" class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600" checked />
+                                        </div>
+                            
+                                        <div class="ms-4 text-sm">
+                                            <label for="dhl" class="font-medium leading-none text-gray-900">
+                                                $15 - DHL Fast Delivery
+                                            </label>
+                                            <p id="dhl-text" class="mt-1 text-xs font-normal text-gray-500">
+                                                Get it by Tommorow
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

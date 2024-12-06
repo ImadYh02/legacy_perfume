@@ -36,6 +36,14 @@
                     <p class="hidden md:block my-10 leading-7 text-[#888072]">
                         {{ $product->description }}
                     </p>
+
+                    <div class="mb-4">
+                        <h3 class="text-sm text-gray-800 uppercase font-medium mb-2">Size</h3>
+                        <div class="flex items-center space-x-3">
+                            <button class="px-3 py-1 border border-gray-200 text-gray-800 rounded-full hover:bg-white focus:outline-none">200ml</button>
+                            <button class="px-3 py-1 border border-gray-200 text-gray-800 rounded-full hover:bg-white focus:outline-none">500ml</button>
+                        </div>
+                    </div>
           
                     <div class="flex items-center">
                         <span class="text-3xl font-[700] mr-4">{{ Number::currency($product->price, 'MAD') }}</span>

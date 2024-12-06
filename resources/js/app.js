@@ -8,6 +8,12 @@ document.addEventListener('livewire:navigated', () => {
     window.HSStaticMethods.autoInit();
 })
 
+document.addEventListener('livewire:load', function () {
+    // Re-initialize Livewire
+    window.Livewire.start();
+});
+
+
 // ===== Start Testimonials Slider Section =====//
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,

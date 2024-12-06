@@ -2,13 +2,14 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'Perfume Shop - Shop' }}</title>
     {{-- ===== Jost Font ===== --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css'])
 </head>
 <body>
     
@@ -33,8 +34,8 @@
                     <span class="font-medium">Category:</span>
                     <div class="flex space-x-4">
                         @foreach ($categories as $category)
-                            <label class="inline-flex items-center">
-                                <input type="radio" name="category" value="all" checked class="form-radio text-blue-600">
+                            <label for="{{ $category->slug }}" class="inline-flex items-center">
+                                <input wire:key="{{ $category->id }}" type="checkbox" wire:model.live="selected_categories" id="{{ $category->slug }}" value="{{ $category->id }}" class="text-blue-600" />
                                 <span class="ml-2">{{ $category->name }}</span>
                             </label>
                         @endforeach
@@ -45,9 +46,21 @@
                 <div class="flex items-center space-x-4">
                     <span class="font-medium">Price:</span>
                     <div class="flex items-center space-x-2">
-                        <input type="number" id="min-price" min="0" max="1000" value="0" class="w-20 px-2 py-1 border rounded">
+                        <input 
+                            type="number" 
+                            min="{{ $minPrice }}" 
+                            max="{{ $maxPrice }}" 
+                            wire:model.live.debounce.250ms="selectedMinPrice" 
+                            class="w-20 px-2 py-1 border rounded"
+                        />
                         <span>to</span>
-                        <input type="number" id="max-price" min="0" max="1000" value="1000" class="w-20 px-2 py-1 border rounded">
+                        <input 
+                            type="number" 
+                            min="{{ $minPrice }}" 
+                            max="{{ $maxPrice }}" 
+                            wire:model.live.debounce.250ms="selectedMaxPrice" 
+                            class="w-20 px-2 py-1 border rounded"
+                        />
                     </div>
                 </div>
 
