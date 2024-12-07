@@ -85,7 +85,7 @@
         </div>
 
         {{-- ===== Related Product ===== --}}
-        @livewire('shop.related_product')
+        @livewire('related_product')
     </main>    
 
     {{-- @livewire('partials.footer') --}}

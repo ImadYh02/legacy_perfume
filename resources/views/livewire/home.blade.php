@@ -183,7 +183,7 @@
                             wire:navigate
                             class="category_link"
                             style="font-weight: 500; font-size: 18px; line-height: 27px"
-                            href="#"> Explore Fresh Scents </a>
+                            href="/shop?selected_categories[0]={{ $category->id }}"> Explore Fresh Scents </a>
                         </div>
                     </div>
                 @endforeach

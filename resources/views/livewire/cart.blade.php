@@ -97,7 +97,7 @@
                         </div> --}}
                     </div>
 
-                    @livewire('shop.related_product')
+                    @livewire('related_product')
                 </div>
 
             <div class="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">

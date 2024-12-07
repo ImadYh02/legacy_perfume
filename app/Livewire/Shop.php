@@ -12,10 +12,9 @@ use Livewire\Component;
 
 class Shop extends Component {
     #[Url]
-
-    // Put the Selected Categories in this Array 
     public $selected_categories = [];
 
+    #[Url]
     public $minPrice;
     public $maxPrice;
 
@@ -29,18 +28,35 @@ class Shop extends Component {
         $this->selectedMinPrice = $this->minPrice;
         $this->selectedMaxPrice = $this->maxPrice;
     }
+    
+    #[Url]
+    public $sort = 'newest';
 
     public function render() {
-        // $productQuery = Product::get();
-        $productQuery = Product::whereBetween('price', [$this->selectedMinPrice, $this->selectedMaxPrice])->get();
-
-        if (!empty($this->selected_category)) {
-            $productQuery->whereIn('category_id', $this->selected_categories);
-        }
         $categories = Category::where('is_active', 1)->get();
 
+        $productQuery = Product::query()->where('is_active', 1);
+
+        if (!empty($this->selected_categories)) {
+            $productQuery->whereIn('category_id', $this->selected_categories);
+        }
+
+        if (!empty($this->selectedMinPrice) || ($this->selectedMaxPrice)) {
+            $productQuery->whereBetween('price', [$this->selectedMinPrice, $this->selectedMaxPrice]);
+        }
+
+        if ($this->sort == "featured") {
+            $productQuery->where('is_featured', 1);
+        } elseif ($this->sort == "low_to_high") {
+            $productQuery->orderBy('price', 'asc');
+        } elseif ($this->sort == "high_to_low") {
+            $productQuery->orderBy('price', 'desc');
+        } elseif ($this->sort == "newest") {
+            $productQuery->latest();
+        }
+
         return view('livewire.shop', [
-            'products' => $productQuery,
+            'products' => $productQuery->get(),
             'categories' => $categories,
         ])
             ->layout('layouts.app');
