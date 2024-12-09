@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Home;
 use App\Livewire\Shop;
+use App\Livewire\Cart;
 use App\Livewire\ProductDetails;
 
 Route::get('/', Home::class);
@@ -14,23 +15,21 @@ Route::get('/shop', Shop::class);
 // });
 
 Route::get('/track-order', function() {
-    return view('livewire.track-order.app');
+    return view('livewire.track-order');
 });
 
 Route::get('/contact', function() {
-    return view('livewire.contact.app');
+    return view('livewire.contact');
 });
 
 Route::get('/shop/{slug}', ProductDetails::class);
 
-Route::get('/cart', function() {
-    return view('livewire.shop.cart');
-});
+Route::get('/cart', Cart::class);
 
 Route::get('/checkout', function() {
-    return view('livewire.shop.checkout');
+    return view('livewire.checkout');
 });
 
 Route::get('/checkout/order-received', function() {
-    return view('livewire.track-order.order-confirmation');
+    return view('livewire.order-confirmation');
 });

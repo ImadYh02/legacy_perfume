@@ -6,12 +6,12 @@
         {{-- ===== Menu Buttons Items ===== --}}
         <div class="sm:order-3 flex items-center gap-x-2">
             {{-- ===== Shop Cart ===== --}}
-            <a class="hs-tooltip-toggle hs-tooltip [--placement:left] hover:text-[#FF1493] transition duration-300 relative" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-offcanvas-right" data-hs-overlay="#hs-offcanvas-right" href="#">
+            <a class="hs-tooltip-toggle hs-tooltip [--placement:left] hover:text-[#FF1493] transition duration-300 relative" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-offcanvas-right" data-hs-overlay="#hs-offcanvas-right">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                 </svg>
 
-                <div class="w-[18px] h-[18px] flex justify-center items-center bg-red-500 rounded-full text-white absolute -top-2 -right-2">5</div>
+                <div class="w-[18px] h-[18px] flex justify-center items-center bg-red-500 rounded-full text-white absolute -top-2 -right-2"> {{ $total_count }} </div>
                   
                 <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
                   Go to Shop Card
@@ -74,24 +74,24 @@
                                 <div class="mt-8">
                                     <div class="flow-root">
                                         <ul role="list" class="-my-6 divide-y divide-gray-200">
-                                        @for ($i = 0; $i < 13; $i++)
+                                        @forelse ($cart_items as $item)
                                             <li class="flex py-6">
-                                                <a href="shop/detail" wire:navigate class="h-24 w-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                    <img src="https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center">
+                                                <a href="/shop/{{ $item['slug'] }}" wire:navigate class="h-24 w-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                    <img src="{{ url('storage', $item['image']) }}" alt="{{ $item['name'] }}" class="h-full w-full object-cover object-center">
                                                 </a>
                         
                                                 <div class="ml-4 flex flex-1 flex-col">
                                                 <div>
                                                     <div class="flex justify-between text-base font-medium text-gray-900">
                                                     <h3>
-                                                        <a href="shop/detail" wire:navigate>Throwback Hip Bag</a>
+                                                        <a href="/shop/{{ $item['slug'] }}" wire:navigate>{{ $item['name'] }}</a>
                                                     </h3>
-                                                    <p class="ml-4">$90.00</p>
+                                                    <p class="ml-4"> {{ Number::currency($item['total_amount'], 'MAD') }} </p>
                                                     </div>
-                                                    <p class="mt-1 text-sm text-gray-500">Salmon</p>
+                                                    <p class="mt-1 text-sm text-gray-500">{{ $item['name'] }}</p>
                                                 </div>
                                                 <div class="flex flex-1 items-end justify-between text-sm">
-                                                    <p class="text-gray-500">Qty 1</p>
+                                                    <p class="text-gray-500">Qty {{ $item['quantity'] }}</p>
                         
                                                     <div class="flex">
                                                     <button type="button" class="font-medium text-[#FF69B4] hover:text-[#FF1493]">Remove</button>
@@ -99,28 +99,28 @@
                                                 </div>
                                                 </div>
                                             </li>
-                                        @endfor
+                                        @empty
+                                            <div class="flex mx-6 mt-32 flex-col gap-5 justify-center items-center content-center h-full">
+                                                <img class="h-20" src="{{asset('pics/shopping-cart.png')}}" alt="">
+                                                <h1>
+                                                    Your Cart is Empty!!
+                                                </h1>
+                                                <a href="/shop" wire:navigate class="flex w-full items-center justify-center bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">
+                                                    Continue Shopping
+                                                </a>
+                                            </div>
+                                        @endforelse
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
-                            {{-- ===== Empty Cart Content ===== --}}
-                            {{-- <div class="flex mx-6 flex-col gap-5 justify-center items-center content-center h-full">
-                                <img class="h-20" src="{{asset('pics/shopping-cart.png')}}" alt="">
-                                <h1>
-                                    Your Cart is Empty!!
-                                </h1>
-                                <a href="/shop" wire:navigate class="flex w-full items-center justify-center bg-[#FF69B4] text-white py-3 px-6 rounded-full hover:bg-[#FF1493] transition duration-300">
-                                    Continue Shopping
-                                </a>
-                            </div> --}}
       
                             {{-- ===== Footer ===== --}}
+                            @if ($cart_items)
                             <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
                                 <div class="flex justify-between text-base font-medium text-gray-900">
                                     <p>Subtotal</p>
-                                    <p>$262.00</p>
+                                    <p> {{ Number::currency($grand_total, 'MAD') }} </p>
                                 </div>
                                 <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                 <div class="mt-6">
@@ -136,6 +136,7 @@
                                     </p>
                                 </div>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Helpers\CartManagement;
+use App\Livewire\Partials\Navbar;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -20,6 +22,16 @@ class Shop extends Component {
 
     public $selectedMinPrice;
     public $selectedMaxPrice;
+    
+    #[Url]
+    public $sort = 'newest';
+
+    # Add Product to Cart Method
+    public function addToCart($product_id) {
+        $total_count = CartManagement::addItemToCart($product_id);
+
+        $this->dispatch('update-cart-count', total_count: $total_count)->to(Navbar::class);
+    }
 
     public function mount() {
         $this->minPrice = Product::min('price');
@@ -28,9 +40,6 @@ class Shop extends Component {
         $this->selectedMinPrice = $this->minPrice;
         $this->selectedMaxPrice = $this->maxPrice;
     }
-    
-    #[Url]
-    public $sort = 'newest';
 
     public function render() {
         $categories = Category::where('is_active', 1)->get();
