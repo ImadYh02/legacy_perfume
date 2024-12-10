@@ -33,6 +33,26 @@ class Cart extends Component {
         $this->dispatch('update-cart-count', total_count: count($this->cart_items))->to(Navbar::class);
     }
 
+    public function increaseQty($product_id) {
+        $this->cart_items = CartManagement::incrementQuantityToCartItem($product_id);
+        
+        $this->grand_total = CartManagement::calculateGrandTotal($this->cart_items);
+        $this->original_total = CartManagement::calculateOriginalTotal($this->cart_items);
+        $this->savings = CartManagement::calculateSavings($this->cart_items);
+
+        $this->dispatch('update-cart-count', total_count: count($this->cart_items))->to(Navbar::class);
+    }
+
+    public function decreaseQty($product_id) {
+        $this->cart_items = CartManagement::decrementQuantityToCartItem($product_id);
+        
+        $this->grand_total = CartManagement::calculateGrandTotal($this->cart_items);
+        $this->original_total = CartManagement::calculateOriginalTotal($this->cart_items);
+        $this->savings = CartManagement::calculateSavings($this->cart_items);
+
+        $this->dispatch('update-cart-count', total_count: count($this->cart_items))->to(Navbar::class);
+    }
+
     public function render() {
         return view('livewire.cart')
             ->layout('layouts.app');

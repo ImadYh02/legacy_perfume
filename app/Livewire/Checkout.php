@@ -2,12 +2,21 @@
 
 namespace App\Livewire;
 
+use App\Helpers\CartManagement;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
-class Checkout extends Component
-{
-    public function render()
-    {
-        return view('livewire.checkout');
+#[Title('Checkout - Perfume Shop')]
+
+class Checkout extends Component {
+    public function render() {
+        $cart_items = CartManagement::getCartItemsFromCookie();
+        $grand_total = CartManagement::calculateGrandTotal($cart_items);
+
+        return view('livewire.checkout', [
+            'cart_items' => $cart_items,
+            'grand_total' => $grand_total,
+        ])
+            ->layout('layouts.app');
     }
 }

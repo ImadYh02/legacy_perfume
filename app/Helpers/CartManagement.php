@@ -130,6 +130,7 @@ class CartManagement {
             if ($item['product_id'] == $product_id) {
                 $cart_items[$key]['quantity']++;
                 $cart_items[$key]['total_amount'] = $cart_items[$key]['quantity'] * $cart_items[$key]['unit_amount'];
+                $cart_items[$key]['old_price'] = $cart_items[$key]['quantity'] * $cart_items[$key]['old_price'];
             }
         }
 
@@ -146,6 +147,7 @@ class CartManagement {
                 if ($cart_items[$key]['quantity'] > 1) {
                     $cart_items[$key]['quantity']--;
                     $cart_items[$key]['total_amount'] = $cart_items[$key]['quantity'] * $cart_items[$key]['unit_amount'];
+                    $cart_items[$key]['old_price'] = $cart_items[$key]['quantity'] * $cart_items[$key]['old_price'];
                 }
             }
         }

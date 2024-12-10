@@ -23,15 +23,15 @@
                                 <div class="flex items-center justify-between md:order-4 md:justify-end">
                                     <div class="flex justify-between content-between bg-white border border-gray-200 rounded-lg w-fit" data-hs-input-number="">
                                         <div class="flex w-full items-center justify-between content-between gap-x-1.5">
-                                            <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium text-[#FF69B4] hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Decrease" data-hs-input-number-decrement="">
+                                            <button wire:click="increaseQty({{ $item['product_id'] }})" type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium text-[#FF69B4] hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Decrease" data-hs-input-number-decrement="">
                                                 <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                     <path d="M5 12h14"></path>
                                                 </svg>
                                             </button>
 
-                                            <input class="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none" style="-moz-appearance: textfield;" type="number" aria-roledescription="Number field" value="{{ $item['quantity'] }}" data-hs-input-number-input="">
+                                            <input class="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none" style="-moz-appearance: textfield;" type="number" aria-roledescription="Number field" readonly value="{{ $item['quantity'] }}" data-hs-input-number-input="">
                                             
-                                            <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium text-[#FF69B4] hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Increase" data-hs-input-number-increment="">
+                                            <button wire:click="decreaseQty({{ $item['product_id'] }})" type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium text-[#FF69B4] hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" tabindex="-1" aria-label="Increase" data-hs-input-number-increment="">
                                                 <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                     <path d="M5 12h14"></path>
                                                     <path d="M12 5v14"></path>
@@ -77,6 +77,7 @@
                                             </span>
 
                                             <span wire:loading.remove wire:target='removeItem({{ $item['product_id'] }})'>Remove</span>
+
                                             <span wire:loading wire:target='removeItem({{ $item['product_id'] }})'>Removing...</span>
                                         </button>
                                     </div>
@@ -86,7 +87,7 @@
                     @empty
                         {{-- ===== Empty Cart Content ===== --}}
                         <div class="flex flex-col gap-5 justify-center items-center content-center my-auto">
-                            <img class="h-20" src="{{ asset('pics/sad_face.png') }}" alt="">
+                            <img class="h-32" src="{{ asset('pics/shopping.png') }}" alt="">
                             <h1>
                                 Your Cart is Currently Empty!!
                             </h1>

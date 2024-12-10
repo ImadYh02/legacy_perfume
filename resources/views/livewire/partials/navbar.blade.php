@@ -81,22 +81,34 @@
                                                 </a>
                         
                                                 <div class="ml-4 flex flex-1 flex-col">
-                                                <div>
-                                                    <div class="flex justify-between text-base font-medium text-gray-900">
-                                                    <h3>
-                                                        <a href="/shop/{{ $item['slug'] }}" wire:navigate>{{ $item['name'] }}</a>
-                                                    </h3>
-                                                    <p class="ml-4"> {{ Number::currency($item['total_amount'], 'MAD') }} </p>
+                                                    <div>
+                                                        <div class="flex justify-between text-base font-medium text-gray-900">
+                                                        <h3>
+                                                            <a href="/shop/{{ $item['slug'] }}" wire:navigate>{{ $item['name'] }}</a>
+                                                        </h3>
+                                                        <p class="ml-4"> {{ Number::currency($item['total_amount'], 'MAD') }} </p>
+                                                        </div>
+                                                        <p class="mt-1 text-sm text-gray-500">{{ $item['name'] }}</p>
                                                     </div>
-                                                    <p class="mt-1 text-sm text-gray-500">{{ $item['name'] }}</p>
-                                                </div>
-                                                <div class="flex flex-1 items-end justify-between text-sm">
-                                                    <p class="text-gray-500">Qty {{ $item['quantity'] }}</p>
-                        
-                                                    <div class="flex">
-                                                    <button type="button" class="font-medium text-[#FF69B4] hover:text-[#FF1493]">Remove</button>
+                                                    <div class="flex flex-1 items-end justify-between text-sm">
+                                                        <p class="text-gray-500">Qty {{ $item['quantity'] }}</p>
+                            
+                                                        <div class="flex">
+                                                            <button wire:click='removeItem({{ $item['product_id'] }})' type="button" class="font-medium text-[#FF69B4] hover:text-[#FF1493]"><span wire:loading wire:target='removeItem({{ $item['product_id'] }})' class="mr-4">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="22" height="22" style="shape-rendering: auto; display: block; background: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                    <g>
+                                                                        <circle stroke-dasharray="164.93361431346415 56.97787143782138" r="35" stroke-width="10" stroke="currentColor" fill="none" cy="50" cx="50">
+                                                                            <animateTransform keyTimes="0;1" values="0 50 50;360 50 50" dur="0.40485829959514175s" repeatCount="indefinite" type="rotate" attributeName="transform"></animateTransform>
+                                                                        </circle>
+                                                                        <g></g>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                
+                                                            <span wire:loading.remove wire:target='removeItem({{ $item['product_id'] }})'>Remove</span>
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 </div>
                                             </li>
                                         @empty
