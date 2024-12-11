@@ -8,6 +8,7 @@ class OrderConfirmation extends Component
 {
     public function render()
     {
-        return view('livewire.order-confirmation');
+        return view('livewire.order-confirmation')
+            ->layout('layouts.app');
     }
 }

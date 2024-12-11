@@ -13,15 +13,14 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->nullable()->constrained('orders')->cascadeOnDelete();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('country');
-            $table->text('street_address')->nullable();
-            $table->string('city')->nullable();
-            $table->string('zip_code')->nullable();
+            $table->string('city');
             $table->string('phone_number');
-            $table->string('email')->unique();
-            $table->text('note')->nullable();
+            $table->string('email');
+            $table->text('address'); // Detailed address
             $table->timestamps();
         });
     }

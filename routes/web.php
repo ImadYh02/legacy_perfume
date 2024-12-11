@@ -6,6 +6,7 @@ use App\Livewire\Shop;
 use App\Livewire\Cart;
 use App\Livewire\Checkout;
 use App\Livewire\ProductDetails;
+use App\Livewire\OrderConfirmation;
 
 Route::get('/', Home::class);
 
@@ -29,6 +30,4 @@ Route::get('/cart', Cart::class);
 
 Route::get('/checkout', Checkout::class);
 
-Route::get('/checkout/order-received', function() {
-    return view('livewire.order-confirmation');
-});
+Route::get('/checkout/order-received', OrderConfirmation::class)->name('order.received');

@@ -53,8 +53,15 @@ class ProductDetails extends Component {
     }
 
     public function render() {
+        $product = Product::where('slug', $this->slug)->firstOrFail();
+        $relatedProducts = Product::where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id) // Exclude the current product if needed
+            ->take(4)
+            ->get();
+
         return view('livewire.product-details', [
-            'product' => Product::where('slug', $this->slug)->firstOrFail(),
+            'product' => $product,
+            'relatedProducts' => $relatedProducts,
         ])
             ->layout('layouts.app');
     }
